@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
 * {
     box-sizing: border-box;
 }
@@ -39,6 +40,13 @@ p {
     margin-top: 0;
 }
 
+button {
+    border: 0;
+    border-radius: 12px;
+    padding: 12px 50px;
+    font-size: 24px;
+}
+
 header{
     font-size: 32px;
     font-weight: 900;
@@ -48,7 +56,6 @@ header{
 .first-container {
     padding: 0 15vw;
     border-bottom: 1px solid black;
-
 }
 
 .header {
@@ -63,24 +70,22 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 100px 0 120px;
+    margin: 100px 0 100px;
 
 }
 
 .hero-content, .main-img {
-    width: 550px;
-    height: 320px;
+    width: 540px;
+    height: 360px;
     flex-shrink: 0;
 }
 
 .hero-content {
+    margin-top: 25px;
     margin-right: 50px;
 }
 .first-container button {
-    border: 0;
-    border-radius: 5px;
-    padding: 12px 36px;
-    font-size: 24px;
+
 }
 
 .main-img {
@@ -93,6 +98,7 @@ header{
     justify-content: center;
     align-items: center;
     padding: 0 0 120px;
+    border-bottom: 1px solid black;
 }
 
 .second-container h2 {
@@ -102,7 +108,7 @@ header{
 .image-container {
     display: flex;
     text-align: center;
-    mar
+
 }
 
 .image-container div {
@@ -115,4 +121,54 @@ header{
     height: 200px;
     border-radius: 12px;
     border: 4px solid black;
+}
+
+.quote {
+    margin: 0 auto;
+    padding: 100px 21vw;
+    border-bottom: 1px solid black;
+}
+
+.quote p{
+    font-style: italic;
+    font-size: 1.5em;
+    font-weight: 300;
+    min-width: 592px;
+}
+
+.quote p::after {
+    content: '-Thor, The God Of Thunder';
+    display: block;
+    font-size: 24px;
+    font-weight: bold;
+    font-style: normal;
+    text-align: right;
+}
+
+.sign-up {
+    border: 1px solid black;
+    margin: 100px 15vw;
+    padding: 50px 6vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bold, .sign-up p {
+    margin-bottom: 0;
+}
+
+.bold {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.sign-up button {
+
+}
+
+footer {
+    text-align: center;
+    padding: 50px 0;
+    border-top: 1px solid black;
 }
