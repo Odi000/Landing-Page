@@ -63,6 +63,13 @@ header{
     flex-shrink: 0;
 }
 
+.credit1, .credit2 {
+    padding: 16px 12px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    font-size: 16px;
+}
+
 .first-container, .sign-up, footer {
     color: white;
 }
@@ -101,13 +108,28 @@ header{
     margin-right: 50px;
 }
 
+.credit1-container {
+    text-align: right;
+    min-width: 1130px;
+}
+
+.credit1 {
+    background-color: #3B82F6;
+    color: #fff;
+    display: inline-block;
+}
+
+.credit1:hover {
+    background-color: #336AC2;
+}
+
 
 .second-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0 0 120px;
+    padding: 0 0 0px;
 }
 
 .second-container h2 {
@@ -157,9 +179,12 @@ header{
 
 .sign-up {
     background-color: #3B82F6;
+    box-sizing: content-box;
+    min-width: 800px;
     margin: 100px 15vw;
     padding: 50px 6vw;
     border-radius: 12px;
+    flex-shrink: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -192,4 +217,17 @@ footer {
     text-align: center;
     padding: 50px 0;
     border-top: 1px solid black;
+}
+
+.credit2 {
+    background-color: #1F2937;
+    color: #fff;
+    margin-top: 70px;
+    margin-right: 15vw;
+    align-self: flex-end;
+}
+
+.credit2:hover {
+    background-color: #27416B;
+    color: #fff;
 }
