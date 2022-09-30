@@ -28,13 +28,14 @@ section.first {
 header {
     background-color: inherit;
     opacity: 0.98;
-    width: 100vw;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1.6rem 1rem;
     position: fixed;
     top: 0;
+    left: 0;
     box-shadow: 0 0.2rem 0.6rem 0 rgba(0, 0, 0, 0.3);
     z-index: 2;
 }
@@ -77,6 +78,7 @@ header a + a {
 }
 
 h1 {
+    width: 19rem;
     font-size: 2.4rem;
     margin: 0;
 }
@@ -93,6 +95,67 @@ p {
     bottom: 0;
     left: 0%;
     z-index: 0;
+}
+ .shadow img {
+    display: none;
+ }
+/*-1st section media query-*/
+@media (min-width: 720px) {
+    section.first {
+        padding: 12rem 5rem 6rem;
+    }
+    /*Header*/
+    header {
+        padding: 1.6rem 5rem;
+    }
+    
+    h2 {
+        font-size: 2.4rem;
+    }
+
+    a {
+        font-size: 1.8rem;
+    }
+
+    /*Hero*/
+    .hero {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2rem;
+        background-image: none;
+        max-width: none;
+        max-height: none;
+        height: 219px;
+    }
+
+    h1 {
+        width: auto;
+        font-size: 3.2rem
+    }
+
+    p {
+        font-size: 1.6rem;
+    }
+
+    .hero div,
+    .hero .shadow {
+        position: static;
+    }
+
+    .hero div {
+        max-width: 307px;
+    }
+    .hero .shadow {
+        width: 329px;
+        max-width: none;
+        flex-shrink: 0;
+    }
+
+    .shadow img {
+        display: inline;
+        width: 100%;
+    }
 }
 
 /*--2nd Section--*/
@@ -156,14 +219,14 @@ div.action-time {
     border-radius: 1rem;
 }
 
-p {
-    font-size: 1.2rem;
+.action-time p {
     font-weight: 700;
 }
 
 .action-time p + p {
     color: #E5E7EB;
     font-size: 1rem;
+    font-weight: normal;
 }
 
 button {
@@ -193,4 +256,45 @@ footer {
     color: var(--white);
     font-size: 1.2rem;
     padding: 2rem;
+}
+
+/*-2st section media query-*/
+@media (min-width: 720px) {
+    section.second {
+        padding-top: 4rem;
+    }
+
+    /*Icons*/
+    .img-container {
+        padding: 5rem 5rem 6rem;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    /*Quote*/
+    div.quote{
+        font-size: 1.9rem;
+        padding: 2.8rem 6rem 3.2rem;
+    }
+
+    .quote::after {
+        font-size: 1.4rem;
+    }
+
+    /*Take Action*/
+    div.action-time {
+        gap: 2rem;
+        padding: 2.4rem 2.4rem;
+        margin: 5rem 15rem;
+        border-radius: 1.2rem;
+    }
+ 
+    .action-time p + p {
+        font-size: 1.2rem;
+    }
+
+    /*footer*/
+    footer {
+        font-size: 1.6rem;
+        padding: 2.2rem;
+    }
 }
