@@ -1,233 +1,526 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
-* {
+*{
     box-sizing: border-box;
 }
+
+:root {
+    --dark-blue: #1F2937;
+    --light-blue: #3B82F6;
+    --medium-grey: #D9D9D9;
+    --white: #fff; 
+    font-size: 10px;
+}
+
 body {
-    font-family: Roboto, sans-serif;
     margin: 0;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    font-size: 24px;
+    font-family: Roboto, Arial, sans-serif;
+}
+/*--1st Section----*/
+section.first {
+    background-color: var(--dark-blue);
+    color: var(--white);
+    padding: 56px 0;
 }
 
-ul {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
+/*Header*/
+
+header {
+    background-color: inherit;
+    opacity: 0.98;
+    width: 100%;
     display: flex;
-    flex-shrink: 0;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.6rem 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 0 0.2rem 0.6rem 0 rgba(0, 0, 0, 0.3);
+    z-index: 2;
 }
 
-li {
-    margin-left: 20px;
+h2 {
+    font-size: 2rem;
+    margin: 0;
 }
 
 a {
     text-decoration: none;
-    color: white;
+    color: inherit;
+    font-size: 1.6rem;
+}
+
+header a + a {
+    margin-left: 1rem;
+}
+
+/*Hero*/
+
+.hero {
+    background-image: url(./images/sickle-moon-min.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 66.6vw;
+    max-width: 660px;
+    max-height: 440px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.hero div {
+    width: 60%;
+    position: absolute;
+    bottom: 4vw;
+    left: 2vw;
+    z-index: 1;
+    text-shadow: 0.2rem 0.2rem 0.4rem rgba(0,0,0,0.3);
 }
 
 h1 {
-    margin: 8px 0 0;
-    font-weight: 900;
-    font-size: 48px;
+    width: 19rem;
+    font-size: 2.4rem;
+    margin: 0;
 }
 
 p {
-    margin-top: 0;
+    font-size: 1.2rem;
+    margin: 0;
 }
 
 button {
-    border: 0;
-    border-radius: 12px;
-    padding: 12px 50px;
-    font-size: 24px;
-    font-weight: bold;
-    background-color: #3B82F6;
-    color: white;
+    display: none;
+    font-size: 1.2rem;
+    font-weight: 700;
+    background-color: var(--light-blue);
+    color: var(--white);
+    border: none;
+    border-radius: 0.55em;
+    padding: 0.6em 2.6em;
+    flex-shrink: 0;
+}
+
+
+
+.hero .shadow {
+    width: 100%;
+    box-shadow: 0 0.4rem 1.4rem 1.6rem var(--dark-blue);
+    position: absolute;
+    bottom: 0;
+    left: 0%;
+    z-index: 0;
+}
+ .shadow img {
+    display: none;
+ }
+/*-1st section media query-*/
+@media (min-width: 720px) {
+    section.first {
+        padding: 12rem 7vw 6rem;
+    }
+
+    /*Header*/
+    header {
+        padding: 1.6rem 7vw;
+    }
+    
+    h2 {
+        font-size: 2.4rem;
+    }
+
+    a {
+        font-size: 1.8rem;
+    }
+
+    /*Hero*/
+    .hero {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2rem;
+        background-image: none;
+        max-width: none;
+        max-height: none;
+        height: fit-content;
+    }
+
+    h1 {
+        width: auto;
+        font-size: 3.2rem;
+    }
+
+    p {
+        font-size: 1.6rem;
+    }
+
+    .hero button {
+        display: inline;
+        margin-top: 0.8rem;
+    }
+
+    .hero div,
+    .hero .shadow {
+        position: static;
+    }
+
+    .hero > :first-child {
+        max-width: 307px;
+    }
+    .hero .shadow {
+        width: 329px;
+        flex-shrink: 0;
+    }
+
+    .shadow img {
+        display: inline;
+        width: 100%;
+    }
+}
+
+/* ---1000---*/
+@media (min-width: 1000px) {
+    section.first {
+        padding: 14.5rem 12vw 7.5rem;
+    }
+
+    /*Header*/
+    header {
+        padding: 1.8rem 12vw;
+    }
+    
+    h2 {
+        font-size: 2.8rem;
+    }
+
+    a {
+        font-size: 2rem;
+    }
+
+    header a + a {
+        margin-left: 1.6rem;
+    }
+
+    /*Hero*/
+    h1 {
+        font-size: 3.8rem;
+        font-weight: 900;
+    }
+
+    p {
+        font-size: 1.8rem;
+    }
+
+    .hero > :first-child {
+        max-width: 350px;
+    }
+    .hero .shadow {
+        width: 354px;
+    }
+}
+
+/* ---1350---*/
+@media (min-width: 1350px) {
+    section.first {
+        padding: 19.5rem 13vw 12rem;
+    }
+
+    /*Header*/
+    header {
+        padding: 1.8rem 13vw;
+    }
+    
+    h2 {
+        font-size: 3.2rem;
+    }
+
+    a {
+        font-size: 2.4rem;
+    }
+
+    header a + a {
+        margin-left: 2.4rem;
+    }
+
+    /*Hero*/
+    h1 {
+        font-size: 4.8rem;
+    }
+
+    p {
+        font-size: 2.4rem;
+    }
+
+    .hero > :first-child {
+        max-width: 540px;
+    }
+    .hero .shadow {
+        width: 540px;
+    }
+
+    .hero button {
+        margin-top: 2.4rem;
+    }
+}
+
+/*--2nd Section--*/
+
+section.second {
+    text-align: center;
+    padding-top: 2.6rem;
+}
+
+/*Icons*/
+
+.img-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 2rem;
+    padding: 3rem 0;
+}
+
+.icon > * {
+    width: 12.5rem;
+    margin: 0 auto;
+}
+
+.icon img {
+    border: 0.4rem solid var(--light-blue);
+    border-radius: 1.2rem;
+    padding: 1.25rem;
+}
+
+/*Quote*/
+
+div.quote{
+    background-color: var(--medium-grey);
+    text-align: left;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 1.6rem;
+    padding: 2.8rem 2.4rem 3.2rem;
+}
+
+.quote::after {
+    content: '-Thor, The God Of Thunder';
+    display: block;
+    text-align: right;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+/*Take Acion*/
+
+div.action-time {
+    background-color: var(--light-blue);
+    color: var(--white);
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem 1.5rem;
+    margin: 3.6rem 3rem;
+    border-radius: 1rem;
+}
+
+.action-time p {
+    font-weight: 700;
+}
+
+.action-time p + p {
+    color: #E5E7EB;
+    font-size: 1rem;
+    font-weight: normal;
+}
+
+.action-time button {
+    display: inline;
+    border: 2px solid var(--white);
 }
 
 button:hover {
-    background-color: #336AC2;
+    background-color: #2f68c5;
 }
+
 button:active {
-    background-color: #27416B;
+    background-color: #629bf8;
+    color: #e3e3e3;
 }
 
-header{
-    font-size: 32px;
-    font-weight: 900;
-    margin-right: 80px;
-    flex-shrink: 0;
+.action-time button:active {
+    border: 2px solid #e3e3e3;
 }
 
-.credit1, .credit2 {
-    padding: 16px 12px;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
-    font-size: 16px;
-}
-
-.first-container, .sign-up, footer {
-    color: white;
-}
-
-.first-container {
-    background-color: #1F2937;
-    padding: 0 15vw;
-}
-
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 16px 0;
-
-}
-
-.hero {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 100px 0 100px;
-
-}
-
-.hero-content, .main-img {
-    width: 540px;
-    height: 360px;
-    flex-shrink: 0;
-}
-.main-img{
-    border-radius: 16px;
-}
-.hero-content {
-    margin-top: 25px;
-    margin-right: 50px;
-}
-
-.credit1-container {
-    text-align: right;
-    min-width: 1130px;
-}
-
-.credit1 {
-    background-color: #3B82F6;
-    color: #fff;
-    display: inline-block;
-}
-
-.credit1:hover {
-    background-color: #336AC2;
-}
-
-
-.second-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 0 0 0px;
-}
-
-.second-container h2 {
-    margin: 60px 0;
-}
-
-.image-container {
-    display: flex;
-    text-align: center;
-
-}
-
-.image-container div {
-    width: 200px;
-    margin: 0 50px;
-}
-
-.icon {
-    width: 200px;
-    height: 200px;
-    border-radius: 24px;
-    border: 4px solid #3B82F6;
-    padding: 16px;
-}
-
-.quote {
-    background-color: #E5E7EB;
-    margin: 0 auto;
-    padding: 100px 21vw;
-}
-
-.quote p{
-    font-style: italic;
-    font-size: 1.5em;
-    font-weight: 300;
-    min-width: 592px;
-}
-
-.quote p::after {
-    content: '-Thor, The God Of Thunder';
-    display: block;
-    font-size: 24px;
-    font-weight: bold;
-    font-style: normal;
-    text-align: right;
-}
-
-.sign-up {
-    background-color: #3B82F6;
-    box-sizing: content-box;
-    min-width: 800px;
-    margin: 100px 15vw;
-    padding: 50px 6vw;
-    border-radius: 12px;
-    flex-shrink: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.bold, .sign-up p {
-    margin-bottom: 0;
-}
-
-.bold {
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.grey {
-    color: #E5E7EB;
-    font-size: 20px;
-}
-
-.sign-up button {
-    border: 3px solid white;
-}
-
-.sign-up button:active {
-    border: 3px solid rgb(199, 199, 199);
-}
+/*footer*/
 
 footer {
-    background-color: #1F2937;
-    text-align: center;
-    padding: 50px 0;
-    border-top: 1px solid black;
+    background-color: var(--dark-blue);
+    color: var(--white);
+    font-size: 1.2rem;
+    padding: 2rem;
 }
 
-.credit2 {
-    background-color: #1F2937;
-    color: #fff;
-    margin-top: 70px;
-    margin-right: 15vw;
-    align-self: flex-end;
+/*-2st section media query-*/
+@media (min-width: 720px) {
+    section.second {
+        padding-top: 4rem;
+    }
+
+    /*Icons*/
+    .img-container {
+        padding: 5rem 7vw 6rem;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    /*Quote*/
+    div.quote{
+        font-size: 1.9rem;
+        padding: 2.8rem 8.3vw 3.2rem;
+    }
+
+    .quote::after {
+        font-size: 1.4rem;
+    }
+
+    /*Take Action*/
+    div.action-time {
+        gap: 2rem;
+        padding: 2.4rem;
+        margin: 5rem auto;
+        width: fit-content;
+        border-radius: 1.2rem;
+    }
+ 
+    .action-time p + p {
+        font-size: 1.2rem;
+    }
+
+    button {
+        font-size: 1.6rem;
+    }
+
+    /*footer*/
+    footer {
+        font-size: 1.6rem;
+        padding: 2.2rem;
+    }
 }
 
-.credit2:hover {
-    background-color: #27416B;
-    color: #fff;
+/* ---1000--- */
+@media (min-width: 1000px) {
+    section.second {
+        padding-top: 6rem;
+    }
+
+    /*Icons*/
+    .img-container {
+        padding: 7rem 12vw 8rem;
+    }
+
+    .icon > * {
+        width: 15rem;
+    }
+
+    .icon > :first-child {
+        margin-bottom: 0.4rem;
+    }
+
+    /*Quote*/
+    div.quote{
+        font-size: 2.3rem;
+        padding: 3.4rem 15vw 3.8rem;
+    }
+
+    .quote::after {
+        font-size: 1.6rem;
+    }
+
+    /*Take Action*/
+    div.action-time {
+        padding: 3rem;
+        margin: 8rem auto;
+        gap: 3rem;
+        border-radius: 1.4rem;
+    }
+ 
+    .action-time p + p {
+        font-size: 1.4rem;
+    }
+
+    button {
+        font-size: 1.8rem;
+    }
+
+    /*footer*/
+    footer {
+        font-size: 1.8rem;
+        padding: 2.4rem;
+    }
+}
+
+/* ---1350--- */
+@media (min-width: 1350px) {
+    section.second {
+        padding-top: 6rem;
+    }
+
+    .second h2 {
+        font-size: 3.6rem;
+    }
+
+    /*Icons*/
+    .img-container {
+        padding: 7rem 15vw 8rem;
+    }
+
+    .icon > * {
+        width: 20rem;
+    }
+
+    .icon > :first-child {
+        margin-bottom: 0.6rem;
+    }
+
+    /*Quote*/
+    div.quote{
+        font-size: 3.6rem;
+        padding: 9.4rem 17vw 9.8rem;
+    }
+
+    .quote::after {
+        font-size: 2.4rem;
+    }
+
+    /*Take Action*/
+    div.action-time {
+        padding: 5rem 8rem;
+        margin: 10rem auto;
+        gap: 5rem;
+        border-radius: 1.4rem;
+    }
+ 
+    .action-time p + p {
+        font-size: 2rem;
+    }
+
+    button {
+        font-size: 2.4rem;
+        padding: 1.2rem 5rem;
+    }
+
+    .action-time button {
+        border: 3px solid var(--white);
+    }
+
+    .action-time button:active {
+        color: #e3e3e3;
+        border: 3px solid #e3e3e3;
+    }
+
+    /*footer*/
+    footer {
+        font-size: 2.4rem;
+        padding: 3.2rem;
+    }
 }
