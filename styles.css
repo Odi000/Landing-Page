@@ -88,6 +88,20 @@ p {
     margin: 0;
 }
 
+button {
+    display: none;
+    font-size: 1.2rem;
+    font-weight: 700;
+    background-color: var(--light-blue);
+    color: var(--white);
+    border: none;
+    border-radius: 0.55em;
+    padding: 0.6em 2.6em;
+    flex-shrink: 0;
+}
+
+
+
 .hero .shadow {
     width: 100%;
     box-shadow: 0 0.4rem 1.4rem 1.6rem var(--dark-blue);
@@ -102,11 +116,12 @@ p {
 /*-1st section media query-*/
 @media (min-width: 720px) {
     section.first {
-        padding: 12rem 5rem 6rem;
+        padding: 12rem 7vw 6rem;
     }
+
     /*Header*/
     header {
-        padding: 1.6rem 5rem;
+        padding: 1.6rem 7vw;
     }
     
     h2 {
@@ -126,16 +141,21 @@ p {
         background-image: none;
         max-width: none;
         max-height: none;
-        height: 219px;
+        height: fit-content;
     }
 
     h1 {
         width: auto;
-        font-size: 3.2rem
+        font-size: 3.2rem;
     }
 
     p {
         font-size: 1.6rem;
+    }
+
+    .hero button {
+        display: inline;
+        margin-top: 0.8rem;
     }
 
     .hero div,
@@ -143,18 +163,102 @@ p {
         position: static;
     }
 
-    .hero div {
+    .hero > :first-child {
         max-width: 307px;
     }
     .hero .shadow {
         width: 329px;
-        max-width: none;
         flex-shrink: 0;
     }
 
     .shadow img {
         display: inline;
         width: 100%;
+    }
+}
+
+/* ---1000---*/
+@media (min-width: 1000px) {
+    section.first {
+        padding: 14.5rem 12vw 7.5rem;
+    }
+
+    /*Header*/
+    header {
+        padding: 1.8rem 12vw;
+    }
+    
+    h2 {
+        font-size: 2.8rem;
+    }
+
+    a {
+        font-size: 2rem;
+    }
+
+    header a + a {
+        margin-left: 1.6rem;
+    }
+
+    /*Hero*/
+    h1 {
+        font-size: 3.8rem;
+        font-weight: 900;
+    }
+
+    p {
+        font-size: 1.8rem;
+    }
+
+    .hero > :first-child {
+        max-width: 350px;
+    }
+    .hero .shadow {
+        width: 354px;
+    }
+}
+
+/* ---1350---*/
+@media (min-width: 1350px) {
+    section.first {
+        padding: 19.5rem 13vw 12rem;
+    }
+
+    /*Header*/
+    header {
+        padding: 1.8rem 13vw;
+    }
+    
+    h2 {
+        font-size: 3.2rem;
+    }
+
+    a {
+        font-size: 2.4rem;
+    }
+
+    header a + a {
+        margin-left: 2.4rem;
+    }
+
+    /*Hero*/
+    h1 {
+        font-size: 4.8rem;
+    }
+
+    p {
+        font-size: 2.4rem;
+    }
+
+    .hero > :first-child {
+        max-width: 540px;
+    }
+    .hero .shadow {
+        width: 540px;
+    }
+
+    .hero button {
+        margin-top: 2.4rem;
     }
 }
 
@@ -180,7 +284,6 @@ section.second {
 }
 
 .icon img {
-    height: 12.5rem;
     border: 0.4rem solid var(--light-blue);
     border-radius: 1.2rem;
     padding: 1.25rem;
@@ -192,6 +295,7 @@ div.quote{
     background-color: var(--medium-grey);
     text-align: left;
     font-style: italic;
+    font-weight: 300;
     font-size: 1.6rem;
     padding: 2.8rem 2.4rem 3.2rem;
 }
@@ -213,6 +317,7 @@ div.action-time {
     text-align: left;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     gap: 2rem;
     padding: 2rem 1.5rem;
     margin: 3.6rem 3rem;
@@ -229,15 +334,9 @@ div.action-time {
     font-weight: normal;
 }
 
-button {
-    font-size: 1.2rem;
-    font-weight: 700;
-    background-color: var(--light-blue);
-    color: var(--white);
+.action-time button {
+    display: inline;
     border: 2px solid var(--white);
-    border-radius: 0.8rem;
-    padding: 0.6rem 2.6rem;
-    flex-shrink: 0;
 }
 
 button:hover {
@@ -246,7 +345,11 @@ button:hover {
 
 button:active {
     background-color: #629bf8;
-    border: 2px solid #2f68c5;
+    color: #e3e3e3;
+}
+
+.action-time button:active {
+    border: 2px solid #e3e3e3;
 }
 
 /*footer*/
@@ -266,14 +369,14 @@ footer {
 
     /*Icons*/
     .img-container {
-        padding: 5rem 5rem 6rem;
+        padding: 5rem 7vw 6rem;
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 
     /*Quote*/
     div.quote{
         font-size: 1.9rem;
-        padding: 2.8rem 6rem 3.2rem;
+        padding: 2.8rem 8.3vw 3.2rem;
     }
 
     .quote::after {
@@ -283,8 +386,9 @@ footer {
     /*Take Action*/
     div.action-time {
         gap: 2rem;
-        padding: 2.4rem 2.4rem;
-        margin: 5rem 15rem;
+        padding: 2.4rem;
+        margin: 5rem auto;
+        width: fit-content;
         border-radius: 1.2rem;
     }
  
@@ -292,9 +396,131 @@ footer {
         font-size: 1.2rem;
     }
 
+    button {
+        font-size: 1.6rem;
+    }
+
     /*footer*/
     footer {
         font-size: 1.6rem;
         padding: 2.2rem;
+    }
+}
+
+/* ---1000--- */
+@media (min-width: 1000px) {
+    section.second {
+        padding-top: 6rem;
+    }
+
+    /*Icons*/
+    .img-container {
+        padding: 7rem 12vw 8rem;
+    }
+
+    .icon > * {
+        width: 15rem;
+    }
+
+    .icon > :first-child {
+        margin-bottom: 0.4rem;
+    }
+
+    /*Quote*/
+    div.quote{
+        font-size: 2.3rem;
+        padding: 3.4rem 15vw 3.8rem;
+    }
+
+    .quote::after {
+        font-size: 1.6rem;
+    }
+
+    /*Take Action*/
+    div.action-time {
+        padding: 3rem;
+        margin: 8rem auto;
+        gap: 3rem;
+        border-radius: 1.4rem;
+    }
+ 
+    .action-time p + p {
+        font-size: 1.4rem;
+    }
+
+    button {
+        font-size: 1.8rem;
+    }
+
+    /*footer*/
+    footer {
+        font-size: 1.8rem;
+        padding: 2.4rem;
+    }
+}
+
+/* ---1350--- */
+@media (min-width: 1350px) {
+    section.second {
+        padding-top: 6rem;
+    }
+
+    .second h2 {
+        font-size: 3.6rem;
+    }
+
+    /*Icons*/
+    .img-container {
+        padding: 7rem 15vw 8rem;
+    }
+
+    .icon > * {
+        width: 20rem;
+    }
+
+    .icon > :first-child {
+        margin-bottom: 0.6rem;
+    }
+
+    /*Quote*/
+    div.quote{
+        font-size: 3.6rem;
+        padding: 9.4rem 17vw 9.8rem;
+    }
+
+    .quote::after {
+        font-size: 2.4rem;
+    }
+
+    /*Take Action*/
+    div.action-time {
+        padding: 5rem 8rem;
+        margin: 10rem auto;
+        gap: 5rem;
+        border-radius: 1.4rem;
+    }
+ 
+    .action-time p + p {
+        font-size: 2rem;
+    }
+
+    button {
+        font-size: 2.4rem;
+        padding: 1.2rem 5rem;
+    }
+
+    .action-time button {
+        border: 3px solid var(--white);
+    }
+
+    .action-time button:active {
+        color: #e3e3e3;
+        border: 3px solid #e3e3e3;
+    }
+
+    /*footer*/
+    footer {
+        font-size: 2.4rem;
+        padding: 3.2rem;
     }
 }
